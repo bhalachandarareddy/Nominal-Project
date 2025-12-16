@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+#status {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.heading-section {
+    margin: 20px 0;
+}
+
+.heading-section label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.heading-section input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+#search {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+#select-all, #deselect-all {
+    padding: 10px 20px;
+    background: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#select-all:hover, #deselect-all:hover {
+    background: #5a6268;
+}
+
+.selected-count {
+    padding: 10px 20px;
+    background: #667eea;
+    color: white;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.batch-group {
+    margin-bottom: 30px;
+}
+
+.batch-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+}
+
+.rank-group {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.rank-header {
+    background: #f8f9fa;
+    padding: 10px 15px;
+    font-weight: 600;
+    color: #495057;
+    border-bottom: 1px solid #ddd;
+}
+
+.cadet-item {
+    display: grid;
+    grid-template-columns: 40px 1fr 120px 80px;
+    gap: 15px;
+    padding: 12px 15px;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    background: white;
+    cursor: pointer;
+    user-select: none;
+}
+
+.cadet-item:hover {
+    background: #f8f9fa;
+}
+
+.cadet-item:last-child {
+    border-bottom: none;
+}
+
+.cadet-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.cadet-name {
+    font-size: 15px;
+    color: #333;
+}
+
+.cadet-rank {
+    font-size: 14px;
+    color: #666;
+    font-weight: 600;
+}
+
+.cadet-batch {
+    font-size: 14px;
+    color: #764ba2;
+    font-weight: 600;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#generate-btn {
+    width: 100%;
+    margin-top: 20px;
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+}
+
+#cadets-list {
+    max-height: 500px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+#cadets-list::-webkit-scrollbar {
+    width: 10px;
+}
+
+#cadets-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+#cadets-list::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+#cadets-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 15px;
+        border-radius: 10px;
+    }
+    
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .btn-primary {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    
+    .controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    #search {
+        width: 100%;
+        min-width: unset;
+    }
+    
+    .selected-count {
+        text-align: center;
+        order: -1;
+    }
+    
+    #select-all, #deselect-all {
+        width: 100%;
+    }
+    
+    .batch-header {
+        font-size: 16px;
+        padding: 12px;
+    }
+    
+    .rank-header {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    
+    .cadet-item {
+        grid-template-columns: 30px 1fr;
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    .cadet-rank, .cadet-batch {
+        display: none;
+    }
+    
+    .cadet-name {
+        font-size: 14px;
+    }
+    
+    .heading-section input {
+        font-size: 14px;
+        padding: 10px;
+    }
+    
+    #cadets-list {
+        max-height: 400px;
+    }
+    
+    #generate-btn {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+    
+    .batch-header {
+        font-size: 14px;
+        padding: 10px;
+    }
+    
+    .cadet-item {
+        padding: 8px;
+    }
+    
+    .cadet-name {
+        font-size: 13px;
+    }
+    
+    #cadets-list {
+        max-height: 350px;
+    }
+}
