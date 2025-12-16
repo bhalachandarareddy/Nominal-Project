@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nominal Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📋 Nominal Generator</h1>
+        
+        <div class="upload-section">
+            <label for="file-upload" class="btn-primary upload-label">
+                📁 Upload Excel Files
+                <input type="file" id="file-upload" accept=".xlsx,.xls" multiple style="display: none;">
+            </label>
+            <div id="status"></div>
+        </div>
+
+        <div id="main-section" style="display: none;">
+            <div class="heading-section">
+                <label>Heading:</label>
+                <input type="text" id="heading-input" placeholder="Enter heading for nominal...">
+            </div>
+
+            <div class="controls">
+                <input type="text" id="search" placeholder="🔍 Search cadets...">
+                <div id="selected-count" class="selected-count">Selected: 0</div>
+                <button id="select-all">Select All</button>
+                <button id="deselect-all">Deselect All</button>
+            </div>
+
+            <div id="cadets-list"></div>
+
+            <button id="generate-btn" class="btn-primary">Generate Nominal</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="keepalive.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
